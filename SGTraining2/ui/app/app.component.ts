@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
-import { UserDtlServiceService } from './user-dtl-service.service';
-import {UserData} from './UserData';
+import {FormControl} from '@angular/forms';
+import { Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   title = 'UserDtlsWeb';
-  
-  private userDataObservable:Observable<any[100]> ; 
+  mode = new FormControl('side');
 
-  constructor(private uservice: UserDtlServiceService ) { 
-  }
-
-  ngOnInit()
+  constructor (private router: Router)
+  { }
+  goToDBPage()
   {
-    console.log(' in app comp constructor');
-    this.userDataObservable = this.uservice.get_users();
-
+    console.log(' in app comonent gotoDBPage');
+    this.router.navigate([`home/dashboard`]);
   }
 }

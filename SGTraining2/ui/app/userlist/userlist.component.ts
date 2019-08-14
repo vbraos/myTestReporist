@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs'
+import { UserDtlServiceService } from '../user-dtl-service.service';
+import {UserData} from '../UserData';
+import { Router } from '@angular/router'
+
 
 @Component({
   selector: 'app-userlist',
@@ -7,9 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserlistComponent implements OnInit {
 
-  constructor() { }
+  private userDataObservable:Observable<any> ; 
 
-  ngOnInit() {
+  constructor(private uservice: UserDtlServiceService,private router: Router ) { 
+    console.log(' in user list constructor');
+
+  }
+
+ 
+
+  ngOnInit()
+  {
+    console.log(' in user list ngOnInit');
+    this.userDataObservable = this.uservice.get_users();
+
   }
 
 }
