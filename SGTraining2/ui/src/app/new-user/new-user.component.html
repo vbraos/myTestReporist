@@ -1,0 +1,29 @@
+<div class="container">
+        <div class="logo">Create a new User!</div>
+        <div class="register-item">
+          <form #myform="ngForm" (ngSubmit)="register(myform)" class="form form-register">
+    
+            <div class="form-field">
+                  <label >Name:</label>
+                  <input name="userName" id="register-text" type="text" class="form-input" placeholder="Name" ngModel required>
+            </div>
+            <div class="form-field">
+              <label class="user" for="register-text">User Type</label>
+              <input name="userType" id="register-text" type="text" class="form-input" placeholder="userType" ngModel required>
+            </div>
+    
+            <div class="form-field">
+              <label class="lock" for="register-text">User Grade</label>
+              <input name="userGrade" id="register-text" type="text" class="form-input" placeholder="userGrade" ngModel required>
+            </div>
+    
+            <div class="form-field">
+              <input type="submit" value="Save">
+            </div>
+
+            <div class="form-field">
+                    <input type="reset" value="Cancel">
+                  </div>
+          </form>
+        </div>
+    </div>

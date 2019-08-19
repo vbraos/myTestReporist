@@ -1,0 +1,30 @@
+<div>
+    <div >Edit User!</div>
+    <div *ngIf="userData">
+        <div >
+            <p><label >User Id:</label>&nbsp;
+            <input placeholder="userId" class="input" type="text" [(ngModel)]="userData.userId"></p>
+      </div>
+        <div >
+        <p><label >Name:</label>&nbsp;
+        <input placeholder="userName" type="text" [(ngModel)]="userData.userName"></p>
+        </div>
+        <div >
+          <label >User Type</label>
+          <input placeholder="userType" type="text" [(ngModel)]="userData.userType">
+        </div>
+
+        <div >
+          <label >User Grade</label>
+          <input placeholder="userGrade" type="text" [(ngModel)]="userData.userGrade">
+        </div>
+
+        <div >
+          <input type="submit" value="Save">
+        </div>
+
+        <div >
+                <input type="reset" value="Cancel">
+              </div>
+    </div>
+</div>

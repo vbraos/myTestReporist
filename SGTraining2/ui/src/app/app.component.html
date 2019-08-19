@@ -1,0 +1,12 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav #sidenav [mode]="side">
+    <p><button mat-button (click)="sidenav.toggle();goToHomePage()">Home</button></p>  
+    <p><button mat-button (click)="sidenav.toggle();goToDBPage()" >DashBoard</button></p>  
+    <p><button mat-button (click)="sidenav.toggle();goToNewUserPage()">Add New User</button></p>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><button mat-button (click)="sidenav.toggle()">Menu</button></p>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

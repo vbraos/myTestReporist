@@ -1,0 +1,21 @@
+<h1>Below is the list of User available </h1>
+<div  class="grid grid-pad">    
+    <table>  
+	<thead>
+    <tr>
+	<th>Id</th>
+	<th>Name</th>
+	<th>Type</th>
+	<th>Grade</th>
+	</tr>
+	</thead>
+		<tbody>
+         <tr *ngFor="let user of userDataObservable|async " >
+          <td>{{user.userId}}</td>
+		  <td>{{user.userName}}</td>
+		  <td>{{user.userType}}</td>
+		  <td>{{user.userGrade}}</td>
+          </tr>
+		  <tbody>
+      </table>   
+</div>
